@@ -173,6 +173,7 @@ public class frm_Agenda extends javax.swing.JFrame {
         DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel();
         Object[] dados = {txtNome.getText(), txtTelefone.getText()};
         dtmAgenda.addRow(dados);
+        
     }//GEN-LAST:event_btnInserirActionPerformed
 
     /**
