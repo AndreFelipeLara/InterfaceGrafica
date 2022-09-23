@@ -5,6 +5,7 @@
  */
 package interfacegrafica;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -108,6 +109,11 @@ public class frm_Agenda extends javax.swing.JFrame {
         });
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnAtualizar.setText("Atualizar");
 
@@ -116,6 +122,12 @@ public class frm_Agenda extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,6 +188,21 @@ public class frm_Agenda extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnInserirActionPerformed
 
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+      
+        
+      if(tbLista.getSelectedRow()!= -1){
+      DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel();  
+      dtmAgenda.removeRow(tbLista.getSelectedRow());
+        
+      
+          JOptionPane.showMessageDialog(null, "Selecione um Registro");
+    }//GEN-LAST:event_btnExcluirActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
